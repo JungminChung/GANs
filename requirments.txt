@@ -1,0 +1,7 @@
+torch
+torchvision
+tqdm
+Pillow
+tensorflow-gpu
+tensorboard
+tensorboardX
