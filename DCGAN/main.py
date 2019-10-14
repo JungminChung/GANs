@@ -28,9 +28,9 @@ def parse_args():
     parser.add_argument('--batch_size', type=int, default=64, help='batch size')
     parser.add_argument('--num_workers', type=int, default=4, help='worker number for data load')
     parser.add_argument('--total_step', type=int, default=1_000_000, help='total step for training')
-    parser.add_argument('--z_dim', type=int, default=100, help='latent random number size')
     
     # Generator 
+    parser.add_argument('--z_dim', type=int, default=100, help='latent random number size')
     parser.add_argument('--init_height', type=int, default=4, help='initial height of feature map in Generator')
     parser.add_argument('--init_width', type=int, default=4, help='initial width of feature map in Generator')
     parser.add_argument('--ngf', type=int, default=64, help='basic feature channel size in Generator')

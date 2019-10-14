@@ -37,8 +37,8 @@ class DCGAN(object):
         self.batch_size = args.batch_size
         self.num_workers = args.num_workers
         self.total_step = args.total_step
-        self.z_dim = args.z_dim
 
+        self.z_dim = args.z_dim
         self.init_height = args.init_height
         self.init_width = args.init_width
         self.ngf = args.ngf
