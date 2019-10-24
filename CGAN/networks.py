@@ -69,13 +69,11 @@ class Discriminator(nn.Module):
 
         self.conv1X = nn.Sequential(
             nn.Conv2d(in_channels=self.image_channel, out_channels=self.ndf*1, kernel_size=4, stride=2, padding=1, bias=False),
-            # nn.InstanceNorm2d(self.ndf*1),
             nn.LeakyReLU(negative_slope=0.2),
         )
 
         self.conv1L = nn.Sequential(
             nn.Conv2d(in_channels=self.n_label, out_channels=self.ndf*1, kernel_size=4, stride=2, padding=1, bias=False),
-            # nn.InstanceNorm2d(self.ndf*1),
             nn.LeakyReLU(negative_slope=0.2),
         )
 
