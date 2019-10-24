@@ -105,13 +105,13 @@ class CGAN(object):
                                 self.n_label, 
                                 self.ngf, 
                                 self.channel)
-                                ).to(self.device)
+                            ).to(self.device)
 
         self.dis = DP(Discriminator(self.image_size, 
                                     self.channel, 
                                     self.n_label, 
                                     self.ndf)
-                                    ).to(self.device)
+                                ).to(self.device)
         
         ########## Init Networks ##########
         self.gen.apply(networks._init_weights)
