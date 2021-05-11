@@ -1,7 +1,7 @@
 import os 
 
 from models import vanillaGAN, DCGAN, CGAN, WGAN, WGANGP
-from  loss import vanilla_G_loss, vanilla_D_loss, wasserstein_G_loss, wasserstein_D_loss
+from .loss import vanilla_G_loss, vanilla_D_loss, wasserstein_G_loss, wasserstein_D_loss
 
 def get_model(model, args):
     if args.mode == 'train' : 
