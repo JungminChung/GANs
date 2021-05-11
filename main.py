@@ -17,9 +17,9 @@ def parse_args():
     parser.add_argument('--device', type=str)
     
     # train 
-    parser.add_argument('--save_subfolder_path', type=str)
-    parser.add_argument('--save_weight_path', type=str)
-    parser.add_argument('--save_train_img_path', type=str)
+    parser.add_argument('--save_subfolder_path', type=str, default='')
+    parser.add_argument('--save_weight_path', type=str, default='')
+    parser.add_argument('--save_train_img_path', type=str, default='')
     parser.add_argument('--batch', type=int, default=64, help='mini batch size')
     parser.add_argument('--step', type=int, default=100_000, help='total step for training')
     parser.add_argument('--save_step', type=int, default=5_000, help='interval to save steps')
@@ -37,7 +37,7 @@ def parse_args():
     parser.add_argument('--beta2', type=float, default=0.999, help='adam beta 2')
     
     # test 
-    parser.add_argument('--save_test_img_path', type=str)
+    parser.add_argument('--save_test_img_path', type=str, default='')
     parser.add_argument('--model_path', type=str, default=None)
     parser.add_argument('--label', type=int, default=1, help='label value for test. Only valid on conditional setting')
 
