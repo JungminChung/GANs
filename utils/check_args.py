@@ -1,8 +1,8 @@
-from folder_utils import make_results_folder
+from .folder_utils import make_results_folder
 
 def check_args(args):
     if args.dataset == 'celebA' and args.model == 'cgan' : 
-        raise AssertionError 'didn\'t provide celebA dataset on cgan'
+        raise AssertionError('didn\'t provide celebA dataset on cgan')
     
     if args.mode == 'train' : 
         args.save_subfolder_path, args.save_weight_path, args.save_train_img_path = make_results_folder(args.mode, args)
