@@ -1,4 +1,5 @@
 import os
+import sys
 import tqdm
 import argparse
 
@@ -45,6 +46,8 @@ def parse_args():
     return parser.parse_args()
 
 def main():
+    sys.path.append('.')
+    
     args = parse_args()
     args = check_args(args)
     print(args)
