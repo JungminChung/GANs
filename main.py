@@ -2,10 +2,11 @@ import os
 import sys
 import tqdm
 import argparse
+import torch 
 
 from utils.check_args import check_args
 from utils.get_dataloader import get_dataloader
-from utils.get_tools import get_model
+from utils.get_tools import get_model, get_losses
 from tensorboardX import SummaryWriter
 
 def parse_args():
