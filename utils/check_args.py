@@ -1,3 +1,4 @@
+import torch
 from .folder_utils import make_results_folder
 
 def check_args(args):
@@ -11,3 +12,4 @@ def check_args(args):
     
     args.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
+    return args
