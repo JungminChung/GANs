@@ -15,12 +15,12 @@ def get_dataloader(dataset, args):
                                 transform=transform_img,
                                 download=True)
     elif dataset == 'fashionmnist':
-        dataset = datasets.fashionmnist(root='../DATA', 
+        dataset = datasets.FashionMNIST(root='./DATA', 
                                         train=True, 
                                         download=True,
                                         transform=transform_img)
     elif dataset == 'celebA' : 
-        dataset = datasets.CelebA(root='../DATA', 
+        dataset = datasets.CelebA(root='./DATA', 
                                   split='train',
                                   download=True, 
                                   transform=transform_img)
