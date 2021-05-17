@@ -3,6 +3,7 @@ DATA/*
 !DATA/.empty
 prev_models
 *_results
+.DS_store
 
 ### Linux ###
 *~
