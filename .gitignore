@@ -2,6 +2,7 @@
 DATA/*
 !DATA/.empty
 prev_models
+*_results
 
 ### Linux ###
 *~
