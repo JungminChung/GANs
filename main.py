@@ -62,10 +62,10 @@ def main():
         loader = iter(get_dataloader(args.dataset, args))
         
         summary = SummaryWriter(args.save_subfolder_path)
-        pbar = tqdm(range(args.step))
+        pbar = tqdm.trange(args.step)
         epoch = 0
 
-        fixed_l = torch.tensor([0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9], dtype=torch.float32).to(device)
+        fixed_l = torch.tensor([0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9], dtype=torch.float32).to(args.device)
         fixed_z = torch.randn(fixed_l.shape[0], args.z_dim, 1, 1).to(args.device)
 
         for step in pbar :
