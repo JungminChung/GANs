@@ -21,10 +21,16 @@ def make_subfolders(working_dir, mode):
         exist_or_make_dir(os.path.join(working_dir, 'results_img'))
 
 def make_results_folder(mode, args): 
-    mid_folder = f'{mode}_{args.dataset}_results'
-    dir_name = get_working_dir_name(tt, args)
+    train_test = f'{mode}_results'
+    exist_or_make_dir(train_test)
+
+    mid_folder = os.path.join(train_test, f'{args.dataset}')
+    exist_or_make_dir(mid_folder)
+    
+    dir_name = get_working_dir_name(mid_folder, args)
     save_folder = os.path.join(mid_folder, dir_name)
     exist_or_make_dir(save_folder)
+    
     make_subfolders(save_folder, mode)
 
     if mode == 'train' : 
