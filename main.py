@@ -7,6 +7,7 @@ import torch
 from utils.check_args import check_args
 from utils.get_dataloader import get_dataloader
 from utils.get_tools import get_model, get_losses
+from utils.train_helpers import update_D, update_G, save_ckpt, save_img, write_logs
 from tensorboardX import SummaryWriter
 
 def parse_args():
@@ -59,8 +60,9 @@ def main():
         G_optim = torch.optim.Adam(G.parameters(), lr=args.lr, betas=(args.beta1, args.beta2))
         D_optim = torch.optim.Adam(D.parameters(), lr=args.lr, betas=(args.beta1, args.beta2))
 
-        loader = iter(get_dataloader(args.dataset, args))
-        
+        loader = get_dataloader(args.dataset, args)
+        iter_loader = iter(loader)        
+
         summary = SummaryWriter(args.save_subfolder_path)
         pbar = tqdm.trange(args.step)
         epoch = 0
@@ -70,11 +72,11 @@ def main():
 
         for step in pbar :
             try : 
-                real_img, label = next(loader)
+                real_img, label = next(iter_loader)
 
             except : 
-                loader = iter(loader)
-                real_img, label = next(loader)
+                iter_loader = iter(loader)
+                real_img, label = next(iter_loader)
                     
                 epoch += 1 
 
