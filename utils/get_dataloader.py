@@ -3,10 +3,16 @@ from torchvision import datasets
 from torch.utils.data import DataLoader
 
 def get_dataloader(dataset, args):
+    if dataset == 'celebA' : 
+        m = (0.5, 0.5, 0.5)
+        s = (0.5, 0.5, 0.5)
+    else : 
+        m = (0.5, )
+        s = (0.5, )
     transform_img = transforms.Compose([
                         transforms.Resize(size=args.img_size, interpolation=0),
                         transforms.ToTensor(),
-                        transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5)),
+                        transforms.Normalize(mean = m, std = s),
                     ])
     
     if dataset == 'mnist': 
